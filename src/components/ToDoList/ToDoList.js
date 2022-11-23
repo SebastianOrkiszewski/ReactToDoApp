@@ -4,7 +4,9 @@ import { Wrapper } from './ToDoList.styles'
 const ToDoList = () => {
   return (
     <Wrapper>
-        <div>ToDoList</div>
+        <div>
+          <ul></ul>
+        </div>
         
     </Wrapper>
   )
