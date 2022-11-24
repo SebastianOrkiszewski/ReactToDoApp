@@ -2,11 +2,11 @@ import React from "react";
 import { Wrapper } from "./ToDoList.styles";
 import ToDo from "components/ToDo/ToDo";
 
-const ToDoList = ({ list, setList }) => {
+const ToDoList = ({ list, setList, filterList }) => {
   return (
     <Wrapper>
       <ul>
-        {list.map((todo) => (
+        {filterList.map((todo) => (
           <ToDo 
           list={list}
           setList={setList}
