@@ -3,24 +3,26 @@ import React from "react";
 import { Wrapper } from "./Form.styles";
 import { useState } from "react";
 
+
 const Form = () => {
-  const [text, setText] = useState('')
+  const [contents, setContents] = useState('')
   const [list, setList] = useState([])
 
   const handleChange = (e) => {
-    setText(e.target.value)
+    setContents(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setText('')
+    setList([...list,{text:contents, done:false, id: Math.random() * 100}], )
+    setContents('')
   }
 
   return (
     <Wrapper>
-      <h1>ToDo List{text}</h1>
+      <h1>ToDo List{contents}</h1>
       <form onSubmit={handleSubmit} >
-        <input type="text" name="text" value={text} onChange={handleChange} />
+        <input type="text" name="contents" value={contents} onChange={handleChange} />
         <button type="submit">Add</button>
         <select name="" id="">
           <option value="">All</option>
@@ -28,7 +30,8 @@ const Form = () => {
           <option value="">x</option>
         </select>
       </form>
-      <ToDoList />
+      <ToDoList list={list}/>
+      
     </Wrapper>
   );
 };

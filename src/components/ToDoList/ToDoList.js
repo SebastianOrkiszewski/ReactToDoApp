@@ -1,13 +1,14 @@
 import React from 'react'
 import { Wrapper } from './ToDoList.styles'
+import ToDo from "components/ToDo/ToDo";
 
-const ToDoList = () => {
+const ToDoList = ({list}) => {
   return (
     <Wrapper>
-        <div>
-          <ul></ul>
-        </div>
-        
+    <ul>{list.map((todo) =>(
+      <ToDo text={todo.text} />
+      ))}</ul>
+       
     </Wrapper>
   )
 }

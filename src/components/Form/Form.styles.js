@@ -14,10 +14,10 @@ form{
     display: flex;
     flex-wrap: nowrap;
 }
-button{
+/* button{
     position: absolute;
     left: 135px;
-}
+} */
 select{
     margin: 0 10px 0 10px;
 
