@@ -10,8 +10,13 @@ const Form = () => {
   const [filterList, setFilterList] = useState([]);
 
   useEffect(() => {
-    handleFilterList()
-  },[list, filter])
+    getLocalList();
+  }, []);
+
+  useEffect(() => {
+    handleFilterList();
+    saveLocalList();
+  }, [list, filter]);
 
   const handleChange = (e) => {
     setContents(e.target.value);
@@ -26,23 +31,36 @@ const Form = () => {
     setContents("");
   };
 
-  const handleFilterList = (e) => {
-    switch(filter) {
-      case"Finished":
-      setFilterList(list.filter((todo) => todo.done === true)) 
-      break;
-      case"Unfinished":
-      setFilterList(list.filter((todo) => todo.done === false)) 
-      break;
+  const handleFilter = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const handleFilterList = () => {
+    switch (filter) {
+      case "Finished":
+        setFilterList(list.filter((todo) => todo.done === true));
+        break;
+      case "Unfinished":
+        setFilterList(list.filter((todo) => todo.done === false));
+        break;
       default:
-      setFilterList(list);
-      break;
+        setFilterList(list);
+        break;
     }
   };
 
-  const handleFilter = (e) => {
-    setFilter(e.target.value);
-  }
+  const saveLocalList = () => {
+    localStorage.setItem("list", JSON.stringify(list));
+  };
+
+  const getLocalList = () => {
+    if (localStorage.getItem("list") === null) {
+      localStorage.setItem("list", JSON.stringify([]));
+    } else {
+      let listLocal = JSON.parse(localStorage.getItem("list"));
+      setList(listLocal);
+    }
+  };
 
   return (
     <Wrapper>
