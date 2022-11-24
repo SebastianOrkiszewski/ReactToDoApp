@@ -14,7 +14,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setList([...list,{text:contents, done:false, id: Math.random() * 100}], )
+    setList([...list,{text:contents, done:false, id: Math.random() * 999}], )
     setContents('')
   }
 
