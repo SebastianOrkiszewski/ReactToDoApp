@@ -20,7 +20,7 @@ const Form = () => {
 
   return (
     <Wrapper>
-      <h1>ToDo List{contents}</h1>
+      <h1>ToDo List</h1>
       <form onSubmit={handleSubmit} >
         <input type="text" name="contents" value={contents} onChange={handleChange} />
         <button type="submit">Add</button>
@@ -30,7 +30,7 @@ const Form = () => {
           <option value="">x</option>
         </select>
       </form>
-      <ToDoList list={list}/>
+      <ToDoList list={list} setList={setList}/>
       
     </Wrapper>
   );
