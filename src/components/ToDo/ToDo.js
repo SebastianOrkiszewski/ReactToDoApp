@@ -20,11 +20,13 @@ const ToDo = ({ text, list, setList, todo }) => {
   };
   return (
     <Wrapper>
-      <InputText className={`${todo.done == true ? "done-task" : ""}`}>
+      <InputText className={`${todo.done === true ? "done-task" : ""}`}>
         {text}
       </InputText>
-      <button onClick={handleDone}>F</button>
-      <button onClick={handleDelete}>D</button>
+      <div>
+        <button onClick={handleDone}>F</button>
+        <button onClick={handleDelete}>D</button>
+      </div>
     </Wrapper>
   );
 };

@@ -6,5 +6,14 @@ width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-color: ${({ theme }) => theme.colors.bgroot};
+    background: ${({ theme }) => theme.background.black};
+ 
 `;
+
+
+
+
+
+
+

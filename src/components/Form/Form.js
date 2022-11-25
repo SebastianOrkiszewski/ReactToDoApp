@@ -1,6 +1,6 @@
 import ToDoList from "components/ToDoList/ToDoList";
 import React from "react";
-import { Wrapper } from "./Form.styles";
+import { ButtonWrapper, Wrapper } from "./Form.styles";
 import { useState, useEffect } from "react";
 
 const Form = () => {
@@ -72,7 +72,7 @@ const Form = () => {
           value={contents}
           onChange={handleChange}
         />
-        <button type="submit">Add</button>
+        <ButtonWrapper type="submit">Add</ButtonWrapper>
         <select onChange={handleFilter} name="" id="">
           <option value="All">All</option>
           <option value="Finished">Finished</option>
