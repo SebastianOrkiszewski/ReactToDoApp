@@ -1,5 +1,6 @@
 import React from "react";
 import { InputText, Wrapper } from "./ToDo.styles";
+import { FcFullTrash, FcExpand } from 'react-icons/fc';
 
 const ToDo = ({ text, list, setList, todo }) => {
   const handleDelete = () => {
@@ -24,8 +25,8 @@ const ToDo = ({ text, list, setList, todo }) => {
         {text}
       </InputText>
       <div>
-        <button onClick={handleDone}>F</button>
-        <button onClick={handleDelete}>D</button>
+        <button onClick={handleDone}><FcExpand size="1.1rem"/></button>
+        <button onClick={handleDelete}><FcFullTrash size="1.1rem" /></button>
       </div>
     </Wrapper>
   );

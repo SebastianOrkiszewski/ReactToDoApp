@@ -2,6 +2,7 @@ import ToDoList from "components/ToDoList/ToDoList";
 import React from "react";
 import { ButtonWrapper, Wrapper } from "./Form.styles";
 import { useState, useEffect } from "react";
+import { FcInspection } from 'react-icons/fc';
 
 const Form = () => {
   const [contents, setContents] = useState("");
@@ -64,7 +65,7 @@ const Form = () => {
 
   return (
     <Wrapper>
-      <h1>ToDo List</h1>
+      <h1>ToDo List <FcInspection size="2rem" /></h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
